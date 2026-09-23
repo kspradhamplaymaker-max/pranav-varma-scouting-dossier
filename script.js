@@ -103,6 +103,37 @@ photoGalleries.forEach(g => {
 
 
 // ===========================
+// WATCH THE GAME - VIDEO CATEGORY DETAIL
+// ===========================
+const videoCatCards = document.querySelectorAll('.video-cat-card');
+const videoDetail = document.getElementById('videoDetail');
+const videoDetailBack = document.getElementById('videoDetailBack');
+const videoDetailPanels = document.querySelectorAll('.video-detail-panel');
+
+function openVideoDetail(category) {
+  videoDetailPanels.forEach(p => p.classList.toggle('active', p.dataset.panel === category));
+  videoDetail.classList.add('open');
+  document.body.classList.add('no-scroll');
+  videoDetail.scrollTop = 0;
+}
+
+function closeVideoDetail() {
+  videoDetail.classList.remove('open');
+  document.body.classList.remove('no-scroll');
+}
+
+videoCatCards.forEach(card => {
+  card.addEventListener('click', () => openVideoDetail(card.dataset.category));
+});
+
+videoDetailBack?.addEventListener('click', closeVideoDetail);
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && videoDetail?.classList.contains('open')) closeVideoDetail();
+});
+
+
+// ===========================
 // STAT COUNTER ANIMATION
 // ===========================
 function animateValue(el, start, end, duration, isDecimal) {
