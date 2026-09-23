@@ -226,6 +226,5 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Log for developer reference
-  console.log('%c🏏 Pranav Varma — IPL Scouting Dossier 2026', 'font-size:16px;font-weight:bold;color:#FFB800;');
-  console.log('%cFor authorised IPL franchise personnel only', 'color:#666;');
+  console.log('%c🏏 Pranav Varma — IPL Scouting Report 2026', 'font-size:16px;font-weight:bold;color:#FFB800;');
 });
